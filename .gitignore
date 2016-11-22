@@ -1,21 +1,9 @@
-.vagrant
-*~
-*#
-.#*
-\#*#
-.*.sw[a-z]
-*.un~
+.idea
+.DS_Store
 
-# Bundler
+Berksfile.lock
 Gemfile.lock
-bin/*
-.bundle/*
-
-# test kitchen
+.bundle/
 .kitchen/
 .kitchen.local.yml
-
-# Chef
-Berksfile.lock
-.zero-knife.rb
-Policyfile.lock.json
+.delivery

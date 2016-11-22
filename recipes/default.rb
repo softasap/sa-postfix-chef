@@ -2,4 +2,7 @@
 # Cookbook Name:: sa-postfix-chef
 # Recipe:: default
 #
-# Copyright (c) 2016 The Authors, All Rights Reserved.
+
+apt_package 'mailutils'
+
+apt_package 'postfix'

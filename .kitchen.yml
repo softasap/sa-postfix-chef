@@ -19,7 +19,7 @@ platforms:
 suites:
   - name: default
     run_list:
-      - recipe[sa-postfix-chef::default]
+      - recipe[chef-postfix::default]
     verifier:
       inspec_tests:
         - test/recipes
