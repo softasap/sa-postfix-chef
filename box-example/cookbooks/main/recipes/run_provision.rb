@@ -5,24 +5,21 @@ require 'chef/provisioning/ssh_driver'
 
 with_driver 'ssh'
 
-machine "ssh" do
+machine 'ssh' do
   action [:ready, :setup, :converge]
-  machine_options :transport_options => {
-    'ip_address' => node["main"]["remote_host_address"],
-    'username' => node["main"]["remote_host_user"],
+  machine_options transport_options: {
+    'ip_address' => node['main']['remote_host_address'],
+    'username' => node['main']['remote_host_user'],
     'ssh_options' => {
-       'keys' => [node["main"]["remote_host_key"]],
+      'keys' => [node['main']['remote_host_key']]
     },
     'options' => {
-       'prefix' => 'sudo ',      
+      'prefix' => 'sudo '
     }
   }
   recipe 'main::default'
   converge true
 end
-
-
-
 
 # with_machine_options  :transport_options => {
 #         'is_windows' => false,
