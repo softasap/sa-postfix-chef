@@ -6,5 +6,9 @@
 .chef/*.pem
 .chef/encrypted_data_bag_secret
 *.lock
-nodes/ssh.json
+nodes/*.json
+environment/*.json
+clients/*.json
 berks-cookbooks
+.chef/provisioning
+.chef/local-mode-cache
