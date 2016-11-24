@@ -1,8 +1,6 @@
 sa-postfix-chef
 ===============
 
-OpsCode Chef implementation of http://github.com/softasap/sa-postfix/
-
 [![Build Status](https://travis-ci.org/softasap/sa-postfix-chef.svg?branch=master)](https://travis-ci.org/softasap/sa-postfix-chef)
 
 
@@ -10,20 +8,40 @@ Example of use: check box-example
 
 Simple:
 
-```RUBY
+```ruby
 
-run_list "recipe[sa-postfix-chef]"
+include_recipe 'sa-postfix-chef::default'
 
 ```
 
 
 Advanced:
 
-```RUBY
+```ruby
 
-run_list "recipe[sa-postfix-chef]" 
+default['sa-postfix-chef']['postfix_domain'] = 'example.com'
+default['sa-postfix-chef']['postfix_hostname'] = 'example.com'
+
+default['sa-postfix-chef']['postfix_properties'] = [
+  { regexp: '^myhostname =*', line: "myhostname = #{default['sa-postfix-chef']['postfix_hostname']}" },
+  { regexp: '^myorigin =*', line: 'myorigin = $mydomain' },
+  { regexp: '^relayhost =*', line: 'relayhost = ' },
+  { regexp: '^inet_interfaces =*', line: 'inet_interfaces = loopback-only' },
+  { regexp: '^mydestination =*', line: 'mydestination = loopback-only' },
+  { regexp: '^mydomain =*', line: "mydomain = #{default['sa-postfix-chef']['postfix_domain']}" }
+]
+
+
+...
+
+
+include_recipe 'sa-postfix-chef::default'
+
 
 ```
+
+
+see box-example folder of the repo for standalone deployment
 
 
 # Misc hints
