@@ -105,6 +105,3 @@ Strainerfile
 ###########
 .vagrant
 Vagrantfile
-
-# softasap #
-box-example/cookbooks/*

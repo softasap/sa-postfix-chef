@@ -7,3 +7,6 @@ Gemfile.lock
 .kitchen/
 .kitchen.local.yml
 .delivery
+
+
+box-example/cookbooks
