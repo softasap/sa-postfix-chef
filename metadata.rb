@@ -4,7 +4,7 @@ maintainer_email 'git@voronenko.info'
 license 'MIT'
 description 'Installs/Configures postfix'
 long_description 'Installs/Configures postfix'
-version '0.1.1'
+version '0.1.2'
 
 # If you upload to Supermarket you should set this so your cookbook
 # gets a `View Issues` link
@@ -13,3 +13,5 @@ issues_url 'https://github.com/softasap/sa-postfix-chef/issues' if respond_to?(:
 # If you upload to Supermarket you should set this so your cookbook
 # gets a `View Source` link
 source_url 'https://github.com/softasap/sa-postfix-chef' if respond_to?(:source_url)
+
+depends 'sa-chef-lineinfile'
