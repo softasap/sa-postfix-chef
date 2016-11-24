@@ -4,7 +4,7 @@ maintainer_email 'git@voronenko.info'
 license 'MIT'
 description 'Installs/Configures postfix'
 long_description 'Installs/Configures postfix'
-version '0.1.4'
+version '0.1.5'
 
 # If you upload to Supermarket you should set this so your cookbook
 # gets a `View Issues` link
