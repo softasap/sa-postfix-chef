@@ -3,7 +3,7 @@ sa-postfix , chef edition
 
 [![Build Status](https://travis-ci.org/softasap/sa-postfix-chef.svg?branch=master)](https://travis-ci.org/softasap/sa-postfix-chef)
 
-Interested in Ansible play? Check here: [![sa-postfix](https://travis-ci.org/softasap/sa-postfix-chef.svg?branch=master)](https://github.com/softasap/sa-postfix)
+Interested in Ansible play? Check here: [![sa-postfix](https://img.shields.io/badge/ansible--galaxy-sa--postfix-blue.svg)](https://github.com/softasap/sa-postfix)
 
 
 Example of use: check box-example
