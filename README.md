@@ -1,5 +1,5 @@
-sa-postfix-chef
-===============
+sa-postfix , chef edition
+=========================
 
 [![Build Status](https://travis-ci.org/softasap/sa-postfix-chef.svg?branch=master)](https://travis-ci.org/softasap/sa-postfix-chef)
 
@@ -10,7 +10,7 @@ Simple:
 
 ```ruby
 
-include_recipe 'sa-postfix-chef::default'
+include_recipe 'sa-postfix::default'
 
 ```
 
@@ -19,23 +19,23 @@ Advanced:
 
 ```ruby
 
-default['sa-postfix-chef']['postfix_domain'] = 'example.com'
-default['sa-postfix-chef']['postfix_hostname'] = 'example.com'
+default['sa-postfix']['postfix_domain'] = 'example.com'
+default['sa-postfix']['postfix_hostname'] = 'example.com'
 
-default['sa-postfix-chef']['postfix_properties'] = [
-  { regexp: '^myhostname =*', line: "myhostname = #{default['sa-postfix-chef']['postfix_hostname']}" },
+default['sa-postfix']['postfix_properties'] = [
+  { regexp: '^myhostname =*', line: "myhostname = #{default['sa-postfix']['postfix_hostname']}" },
   { regexp: '^myorigin =*', line: 'myorigin = $mydomain' },
   { regexp: '^relayhost =*', line: 'relayhost = ' },
   { regexp: '^inet_interfaces =*', line: 'inet_interfaces = loopback-only' },
   { regexp: '^mydestination =*', line: 'mydestination = loopback-only' },
-  { regexp: '^mydomain =*', line: "mydomain = #{default['sa-postfix-chef']['postfix_domain']}" }
+  { regexp: '^mydomain =*', line: "mydomain = #{default['sa-postfix']['postfix_domain']}" }
 ]
 
 
 ...
 
 
-include_recipe 'sa-postfix-chef::default'
+include_recipe 'sa-postfix::default'
 
 
 ```
